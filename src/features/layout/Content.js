@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { FiSearch } from "react-icons/fi";
 
@@ -7,9 +7,20 @@ import Icon2 from "../../assets/header/star.svg";
 import Icon3 from "../../assets/header/sun.svg";
 import Icon4 from "../../assets/header/clock.svg";
 import Icon5 from "../../assets/header/bell.svg";
+import { getEventById } from "../data/events";
+import { Link, useParams } from "react-router-dom";
 
-const breadCrumb = ["Event Selection"];
 const Content = (props) => {
+  const [crumbs, setCrumbs] = React.useState(["Event Selection"]);
+  const params = useParams();
+  useEffect(() => {
+    if (params.id) {
+      setCrumbs(["Event Selection", getEventById(+params.id).subtitle]);
+    } else {
+      setCrumbs(["Event Selection"]);
+    }
+  }, [params]);
+
   return (
     <section className="flex-1 relative">
       <header className="p-6 border-b border-gray-700 flex">
@@ -21,10 +32,12 @@ const Content = (props) => {
           <button aria-label="bookmark">
             <img src={Icon2} alt="" />
           </button>
-          <ul className="bread-crumb flex gap-1">
-            {breadCrumb.map((crumb) => (
-              <div className="crumb flex gap-1">
-                <li>{crumb}</li>
+          <ul className="bread-crumb flex gap-1 truncate">
+            {crumbs.map((crumb, i) => (
+              <div className="crumb truncate flex gap-1" key={crumb}>
+                <li className={!i && "truncate hover:underline"}>
+                  {i === 0 ? <Link to="/">{crumb}</Link> : <>{crumb}</>}
+                </li>
                 <span className="text-gray-600">/</span>
               </div>
             ))}
@@ -32,7 +45,7 @@ const Content = (props) => {
         </div>
 
         {/* Search bar */}
-        <div className="search-bar relative">
+        <div className="search-bar relative flex-shrink-0">
           <FiSearch className="absolute top-1/2 -translate-y-1/2 left-2" />
           <input
             type="text"
@@ -42,7 +55,7 @@ const Content = (props) => {
         </div>
 
         {/* Other Icons */}
-        <div className="flex items-center gap-[1.5ch] text-gray-200">
+        <div className="flex items-center gap-[1.5ch] text-gray-200 flex-shrink-0">
           <button aria-label="toggle dark mode">
             <img src={Icon3} alt="" />
           </button>
@@ -57,7 +70,9 @@ const Content = (props) => {
           </button>
         </div>
       </header>
-      <section className="h-[calc(100vh-129.6px)] overflow-y-scroll">{props.children}</section>
+      <section className="h-[calc(100vh-129.6px)] overflow-y-scroll">
+        {props.children}
+      </section>
       <footer className="absolute border-t border-gray-700 left-0 bottom-0 w-full z-30 flex  justify-between text-gray-400 text-ssm p-6 py-4 bg-gray-primary">
         <span>@ 2023 ScoreBox</span>
         <ul className="flex gap-[1ch]">

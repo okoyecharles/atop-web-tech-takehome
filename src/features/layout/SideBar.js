@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Avatar from "../../assets/avatar.png";
 import Logo from "../../assets/logo.svg";
+import Dropdown from "../../components/dropdown";
+import { Link } from "react-router-dom";
 
 import { BsDot } from "react-icons/bs";
-import { SlArrowDown } from "react-icons/sl";
 
 import Icon1 from "../../assets/sidebar/Buildings.svg";
 import Icon2 from "../../assets/sidebar/PokerChip.svg";
@@ -12,10 +13,6 @@ import Icon4 from "../../assets/sidebar/BookOpen.svg";
 import Icon5 from "../../assets/sidebar/Notebook.svg";
 import Icon6 from "../../assets/sidebar/MusicNote.svg";
 import Icon7 from "../../assets/sidebar/IdentificationBadge.svg";
-
-// temp
-import { useSpring, a, useTrail } from "@react-spring/web";
-import Dropdown from "../../components/dropdown";
 
 const SideBar = () => {
   return (
@@ -44,12 +41,17 @@ const SideBar = () => {
 
         <div className="sidebar-section pt-6">
           <h2 className="text-ssm text-gray-400">Dashboards</h2>
-          <ul className="pt-2 flex flex-col gap-2">
-            <li className="flex items-center text-gray-300 gap-[0.5ch] ml-2">
-              <img src={Icon1} alt="" className="h-[17.5px] w-[17.5px]" /> Event
-              Selection
+          <ul className="pt-2 flex flex-col gap-1">
+            <li className="text-gray-300 hover:bg-gray-secondary rounded cursor-pointer transition">
+              <Link
+                className="py-1 px-2 flex items-center gap-[0.5ch]"
+                to={"/"}
+              >
+                <img src={Icon1} alt="" className="h-[17.5px] w-[17.5px] " />{" "}
+                Event Selection
+              </Link>
             </li>
-            <li className="flex items-center text-gray-300 gap-[0.5ch] ml-2">
+            <li className="flex items-center text-gray-300 gap-[0.5ch] py-1 px-2 hover:bg-gray-secondary rounded cursor-pointer transition">
               <img src={Icon2} alt="" className="h-[17.5px] w-[17.5px]" />{" "}
               Studio Owner
             </li>

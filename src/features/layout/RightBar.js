@@ -1,66 +1,6 @@
 import React from "react";
-
-// Notifications
-import Image1 from "../../assets/notifications/bug.svg";
-import Image2 from "../../assets/notifications/user.svg";
-import Image3 from "../../assets/notifications/signal.svg";
-// Activities
-import Image4 from "../../assets/activities/eve.png";
-import Image5 from "../../assets/activities/aliah.png";
-import Image6 from "../../assets/activities/drew.png";
-import Image7 from "../../assets/activities/kate.png";
-import Image8 from "../../assets/activities/lana.png";
-
-const notifications = [
-  {
-    image: Image1,
-    title: "You have a bug that needs to be fixed",
-    description: "email@gmail.com",
-  },
-  {
-    image: Image2,
-    title: "New user registered",
-    description: "1:23 AM",
-  },
-  {
-    image: Image1,
-    title: "You have a bug that needs to be fixed",
-    description: "0:32 AM",
-  },
-  {
-    image: Image3,
-    title: "Andi Lane sent payment",
-    description: "Yesterday 12:39 AM",
-  },
-];
-
-const activities = [
-  {
-    image: Image4,
-    title: "Added entries to Kelowna",
-    description: "email@gmail.com",
-  },
-  {
-    image: Image5,
-    title: "Added students",
-    description: "1:32 AM",
-  },
-  {
-    image: Image6,
-    title: "Submitted a bug",
-    description: "Yesterday 12:39 AM",
-  },
-  {
-    image: Image7,
-    title: "Uploaded music",
-    description: "Last Thursday 3:34 AM",
-  },
-  {
-    image: Image8,
-    title: "Deleted entry",
-    description: "Aug 11",
-  },
-];
+import notifications from "../data/notifications";
+import activities from "../data/activities";
 
 const RightBar = () => {
   return (
@@ -70,8 +10,8 @@ const RightBar = () => {
           <h2>Notifications</h2>
         </header>
         <ul className="pt-4 flex flex-col gap-2">
-          {notifications.map((notification) => (
-            <li className="flex gap-1 cursor-pointer">
+          {notifications.map((notification, index) => (
+            <li className="flex gap-1 cursor-pointer" key={index}>
               <div className="notification-image w-8 flex-shrink-0">
                 <img
                   src={notification.image}
@@ -94,8 +34,8 @@ const RightBar = () => {
           <h2>Acitivities</h2>
         </header>
         <ul className="pt-4 flex flex-col gap-4">
-          {activities.map((activity) => (
-            <li className="flex gap-2 cursor-pointer">
+          {activities.map((activity, index) => (
+            <li className="flex gap-2 cursor-pointer" key={index}>
               <div className="activity-image w-8 h-8 flex-shrink-0">
                 <img src={activity.image} alt={activity.title.toLowerCase()} />
               </div>

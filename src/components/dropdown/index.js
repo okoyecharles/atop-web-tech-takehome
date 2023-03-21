@@ -40,7 +40,7 @@ const Dropdown = ({ children, items }) => {
         style={dropSpring}
       >
         {dropItemTrail.map((trail, index) => (
-          <a.li style={trail}>{items[index]}</a.li>
+          <a.li style={trail} key={index}>{items[index]}</a.li>
         ))}
       </a.ul>
     </li>
