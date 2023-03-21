@@ -9,7 +9,7 @@ const Events = () => {
       <h2 className="text-gray-200 flex items-center gap-[1ch] font-medium">
         All Events <SlArrowDown className={`text-xsm mr-1 text-gray-500`} />
       </h2>
-      <ul className="pt-4 grid grid-cols-2 gap-4">
+      <ul className={`pt-4 grid grid-cols-1 md:grid-cols-2 gap-4`}>
         {events.map((event) => (
           <EventCard event={event} key={event.id} />
         ))}

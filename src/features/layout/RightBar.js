@@ -2,9 +2,17 @@ import React from "react";
 import notifications from "../data/notifications";
 import activities from "../data/activities";
 
-const RightBar = () => {
+const RightBar = ({ open }) => {
   return (
-    <section className="border-l border-gray-700 w-64 py-5">
+    <section
+      className={`py-6 bg-gray-primary border-t overflow-y-scroll md:border-t-0 md:border-l z-40 border-gray-700
+      fixed lg:static md:top-[76.2px] left-0 md:left-auto md:right-0 bottom-0 w-full md:w-72 h-[50vh] md:h-full ${
+        !open
+          ? "translate-y-full md:translate-y-0 md:translate-x-full lg:translate-x-0 lg:w-0"
+          : "translate-y-0"
+      }
+    transition-all`}
+    >
       <div className="notifications-container px-4">
         <header className="text-base text-gray-200 font-medium">
           <h2>Notifications</h2>

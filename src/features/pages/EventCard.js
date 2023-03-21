@@ -11,7 +11,7 @@ const EventCard = ({ event }) => {
       <div className="flex justify-end text-xsm uppercase text-gray-400">
         {event.date}
       </div>
-      <h2 className="text-base font-semibold text-gray-200 my-2">
+      <h2 className="text-base font-semibold text-gray-200 py-2 mb-auto">
         {event.title}
       </h2>
       <ul className="my-2">
@@ -21,7 +21,7 @@ const EventCard = ({ event }) => {
         </li>
         <li className="flex text-ssm items-center text-gray-300">
           <BsDot className="text-2xl -ml-2 text-gray-500" />
-          Music Submitted: {event.submittedEntries}
+          Music Submitted: {event.submittedMusic}
         </li>
       </ul>
       <div className="badge flex justify-end items-center gap-2">

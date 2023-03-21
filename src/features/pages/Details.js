@@ -19,7 +19,7 @@ const Details = () => {
         <SlArrowDown className={`text-xsm mr-1 text-gray-500`} />
       </h2>
 
-      <div className="stats-grid grid grid-cols-4 gap-4 mt-8">
+      <div className="stats-grid grid md:grid-cols-2 xl:grid-cols-4 gap-4 mt-8">
         <div className="bg-[#e3f5ff] rounded-lg p-4 flex flex-col gap-2 text-gray-800">
           <h3 className="text-base font-medium">Entries Submitted</h3>{" "}
           <span className="font-bold text-2xl">{event.submittedEntries}</span>
@@ -30,7 +30,7 @@ const Details = () => {
             {event.submittedMusic}/{event.submittedEntries}
           </span>
         </div>
-        <div className="col-span-2 bg-gray-secondary p-4 rounded-lg text-gray-300">
+        <div className="xl:col-span-2 bg-gray-secondary p-4 rounded-lg text-gray-300">
           <h3 className="text-base mb-2 text-gray-200 font-medium">Progress</h3>
           <div className="flex gap-2">
             <div>Registration: </div>
@@ -47,7 +47,7 @@ const Details = () => {
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-4 gap-4">
+      <div className="mt-8 grid md:grid-cols-2 xl:grid-cols-4 gap-4">
         <div className="bg-gray-secondary rounded-md p-4 flex flex-col gap-4">
           <h3 className="font-semibold text-gray-200">By Entry Type</h3>
           <div className="chart flex justify-center">
