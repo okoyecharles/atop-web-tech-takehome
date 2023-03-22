@@ -6,7 +6,7 @@ const RightBar = ({ open }) => {
   return (
     <section
       className={`py-6 bg-gray-primary border-t overflow-y-scroll md:border-t-0 md:border-l z-40 border-gray-700
-      fixed lg:static md:top-[76.2px] left-0 md:left-auto md:right-0 bottom-0 w-full md:w-72 h-[50vh] md:h-full ${
+      fixed lg:static md:top-[76.2px] left-0 md:left-auto md:right-0 bottom-0 w-full md:w-72 h-[50vh] md:h-screen ${
         !open
           ? "translate-y-full md:translate-y-0 md:translate-x-full lg:translate-x-0 lg:w-0"
           : "translate-y-0"
