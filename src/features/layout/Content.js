@@ -17,7 +17,7 @@ const Content = (props) => {
   const params = useParams();
   useEffect(() => {
     if (params.id) {
-      setCrumbs(["Event Selection", getEventById(+params.id).subtitle]);
+      setCrumbs(["Event Selection", getEventById(+params.id).titles[0]]);
     } else {
       setCrumbs(["Event Selection"]);
     }
