@@ -15,7 +15,7 @@ const Details = () => {
   return (
     <div className="p-4">
       <h2 className="text-gray-200 flex items-center gap-[1ch] font-medium">
-        {event?.subtitle}{" "}
+        {event?.titles[0]}{" "}
         <SlArrowDown className={`text-xsm mr-1 text-gray-500`} />
       </h2>
 
