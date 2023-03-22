@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { getEventById } from "../data/events";
 import { SlArrowDown } from "react-icons/sl";

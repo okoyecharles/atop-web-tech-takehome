@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "../../assets/avatar.png";
 import Logo from "../../assets/logo.svg";
 import Dropdown from "../../components/dropdown";

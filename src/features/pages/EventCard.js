@@ -1,7 +1,7 @@
 import React from "react";
 import { BsDot } from "react-icons/bs";
 import { AiTwotoneUnlock, AiTwotoneLock } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EventCard = ({ event }) => {
   const navigate = useNavigate();

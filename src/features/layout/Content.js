@@ -98,13 +98,13 @@ const Content = (props) => {
         <span>@ 2023 ScoreBox</span>
         <ul className="flex gap-[1ch]">
           <li className="hover:underline">
-            <a href="">About</a>
+            <Link to={"/"}>About</Link>
           </li>
           <li className="hover:underline">
-            <a href="">Support</a>
+            <Link to={"/"}>Support</Link>
           </li>
           <li className="hover:underline">
-            <a href="">Contact Us</a>
+            <Link to={"/"}>Contact</Link>
           </li>
         </ul>
       </footer>
